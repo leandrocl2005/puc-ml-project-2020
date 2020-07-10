@@ -1,4 +1,4 @@
-# API de identificação de áreas construídas
+# API de identificação de áreas construídas em imagens JPG
 
 ![Bridge on forest](https://images.unsplash.com/photo-1562939568-91cdb83881ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&h=300&q=80)
 
@@ -113,6 +113,3 @@ São aproximadamente 40 Gbs de dados compactados. São aproximadamente 24 horas 
 - https://github.com/matterport/Mask_RCNN
 - SpaceNet on Amazon Web Services (AWS). “Datasets.” The SpaceNet Catalog.  Last modified April 30, 2018.
 Accessed on 06/07/2020. https://spacenetchallenge.github.io/datasets/datasetHomePage.html.
-- https://www.usgs.gov/land-resources/nli/landsat/landsat-data-access?qt-science_support_page_related_con=0#qt-science_support_page_related_con
-- https://github.com/crowdAI/crowdai-mapping-challenge-mask-rcnn
-
