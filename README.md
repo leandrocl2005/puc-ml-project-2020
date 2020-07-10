@@ -71,10 +71,28 @@ Após instalar o CLI da AWS, digite:
 aws s3 cp s3://spacenet-dataset/spacenet/SN6buildings/tarballs/SN6buildingsAOI11Rotterdamtrain.tar.gz .
 ```
 
-São aproximadamente 40 Gbs de dados compactados. São aproximadamente 24 horas para download e descompactação dos dados. Devido a quantidade de imagens e limitação da minha máquina `i7 8gb` sem GPU, dados foram transferidos para o Google Drive na intenção de fazer treinamentos no Google Colab. O tempo para upload dos dados foi de 4 dias inteiros.
+São aproximadamente 40 Gbs de dados compactados. São aproximadamente 24 horas para download e descompactação dos dados. Devido a quantidade de imagens e limitação da minha máquina i7 8gb sem GPU, dados foram transferidos para o Google Drive na intenção de fazer treinamentos no Google Colab. O tempo para upload dos dados foi de 4 dias inteiros.
+
+## Exploração dos dados
+- São 3401 imagens de satélites tiradas sobre Rotterdan. As imagens estão em formato .tif
+- Há 3401 arquivos .geojson se referindo à construções nas imagens
+- Exemplos das imagens originais estão na pasta `spacenet/TIF-RGB`
+- Exemplos dos arquivos geojson originais estão na pasta `spacenet/GEOJSON`
+![](/assets/mask-example.png)
+- As imagens da pasta `spacenet/TIF-RGB` são 900x900x3, enquanto suas máscaras são 900x900x4.
+- O notebook de exploração do dataset é `spacenet_eda.ipynb`. 
+
+## Pré-processamento
+- As imagens possuem dimensões grandes para treinamento. Como utilizaremos pesos pré-treinados, um número menor de imagens é suficiente para obter resultados expressivos. Por exemplo, considerando o dataset Ballon, apenas 62 imagens são suficientes para obter-se uma boa acurácia considerando os pesos pré-treinados MS COCO.
+- As imagens da pasta <i>spacenet/TIF-RGB</i> em formato .tif foram convertidas para .png e colocadas na pasta <i>spacenet/PNG-RGB</i>. O código para conversão é `tif2png.py`.
+- As conversões facilitam a implementação do método <i>load_image</i> da classe <i>Dataset</i>.
+
+## Balanceamento de classes
+- No caso de conjuntos de imagens, cada padrão se comporta como se fosse uma classe. Por exemplo, se tiverem muitas construções retangulares e muito poucas redondas, o modelo pode não identificar assertivamente construções redondas. Por isso em treinamentos com imagens são necessárias várias. O conjunto de pesos considerado (MS COCO) foi treinado com 330 mil imagens. Mais informações sobre este conjunto podem ser encontradas [aqui](https://cocodataset.org/#home). 
 
 ## Criação das máscaras 
-***##TODO***
+- Os arquivos da pasta <i>spacenet/GEOJSON</i> em formato .geojson foram convertidas para .png e colocadas na pasta <i>spacenet/PNG-MASK</i>. O código para conversão é `geojson2png.py` e foi obtido do repositório do [Mstfakts](https://github.com/Mstfakts/Building-Detection-MaskRCNN). Como depende da biblioteca <i>geoio</i> o processo foi feito pelo Google Colab.
+- As conversões facilitam a implementação do método <i>load_image</i> da classe <i>Dataset</i>.
 
 ## Criação da classe Config
 ***##TODO***
@@ -107,9 +125,11 @@ São aproximadamente 40 Gbs de dados compactados. São aproximadamente 24 horas 
 ## Agradecimentos
 - Obrigado <a href="https://unsplash.com/@serjosoza?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">sergio souza</a> por compartilhar seu trabalho no <a href="https://unsplash.com/s/photos/amazon-rainforest?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 - Obrigado ao professor Eder Balbino pelo material didático que orientou o trabalho.
+- Obrigado ao [Mstfakts](https://github.com/Mstfakts/Building-Detection-MaskRCNN) por compartilhar seu código.
+- Obrigado à [Matterport](https://github.com/matterport/Mask_RCNN) por criar e compartilhar o modelo de MaskRCNN de maneira tão simples e elegante.
 
 ## Referências
 - https://www.analyticsvidhya.com/blog/2019/07/computer-vision-implementing-mask-r-cnn-image-segmentation/
-- https://github.com/matterport/Mask_RCNN
+- 
 - SpaceNet on Amazon Web Services (AWS). “Datasets.” The SpaceNet Catalog.  Last modified April 30, 2018.
 Accessed on 06/07/2020. https://spacenetchallenge.github.io/datasets/datasetHomePage.html.
