@@ -51,10 +51,10 @@ A última linha faz a atualização do código de `model.py`. Após atualizaçã
     - Deploy exemplo simples de frontend no Heroku
 
 ## Possíveis aquisições de dados
-- Imagens de satélite (Nasa e Landsat)
-- Planet: Understanding the Amazon from Space Challenge dataset (Kaggle)
-- Google Earth
-- Spacenet dataset (Spacenet)
+- Imagens de satélite ([Nasa](https://api.nasa.gov/) e [Landsat](https://www.usgs.gov/land-resources/nli/landsat/landsat-data-access?qt-science_support_page_related_con=0#qt-science_support_page_related_con))
+- [Planet: Understanding the Amazon from Space Challenge dataset](https://www.kaggle.com/c/planet-understanding-the-amazon-from-space)
+- [Google Earth](https://www.google.com.br/intl/pt-BR/earth/)
+- [Spacenet dataset](https://spacenetchallenge.github.io/datasets/datasetHomePage.html)
 
 ## Dificuldades encontradas na aquisição de dados
 - Imagens de baixa qualidade
@@ -62,7 +62,7 @@ A última linha faz a atualização do código de `model.py`. Após atualizaçã
 - Limitação no número de requisões para API gratuita
 - Extração manual (não fornece API)
 
-Devido às limitações acima, escolheu-se o Spacenet dataset. Este contém imagens de alta qualidade já com máscaras. São 3401 imagens e o download é simples. Além disso é opensource.
+Devido às limitações acima, escolheu-se o [Spacenet dataset](https://spacenetchallenge.github.io/datasets/datasetHomePage.html). Este contém imagens de alta qualidade já com máscaras. São 3401 imagens e o download é simples. Além disso é opensource.
 
 ## Aquisição de dados
 Após instalar o CLI da AWS, digite:
@@ -111,9 +111,8 @@ São aproximadamente 40 Gbs de dados compactados. São aproximadamente 24 horas 
 ## Referências
 - https://www.analyticsvidhya.com/blog/2019/07/computer-vision-implementing-mask-r-cnn-image-segmentation/
 - https://github.com/matterport/Mask_RCNN
-- https://spacenetchallenge.github.io/datasets/datasetHomePage.html
-- https://www.google.com.br/intl/pt-BR/earth/
-- https://api.nasa.gov/
+- SpaceNet on Amazon Web Services (AWS). “Datasets.” The SpaceNet Catalog.  Last modified April 30, 2018.
+Accessed on 06/07/2020. https://spacenetchallenge.github.io/datasets/datasetHomePage.html.
 - https://www.usgs.gov/land-resources/nli/landsat/landsat-data-access?qt-science_support_page_related_con=0#qt-science_support_page_related_con
 - https://github.com/crowdAI/crowdai-mapping-challenge-mask-rcnn
 
