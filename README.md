@@ -11,8 +11,6 @@
 ## Objetivo
 - Criar uma API que dado uma imagem, retorna a porcentagem da imagem com construções
 
-## Getting Started
-
 ## Setup on Windows with Anaconda Python 3.7
 ```bash
 git clone https://github.com/matterport/Mask_RCNN.git
@@ -47,6 +45,10 @@ A última linha faz a atualização do código de `model.py`. Após atualizaçã
     - Criar uma classe para carregamento das informações do conjunto de dados, por exemplo, imagens, labels, classes, máscaras, ...
     - Treinar o modelo
     - Validar o modelo
+    - Criar API backend (flask)
+    - Deploy API backend no Pythonanywhere
+    - Criar exemplo simples de frontend (node-express com nunjucks)
+    - Deploy exemplo simples de frontend no Heroku
 
 ## Possíveis aquisições de dados
 - Imagens de satélite (Nasa e Landsat)
