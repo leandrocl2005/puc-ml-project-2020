@@ -1,4 +1,4 @@
-# API identificação de áreas construídas
+# API de identificação de áreas construídas
 
 ![Bridge on forest](https://images.unsplash.com/photo-1562939568-91cdb83881ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&h=300&q=80)
 
@@ -9,7 +9,7 @@
 - Atraso em processos relacionados com auto-declaração de posse;
 
 ## Objetivo
-- Criar uma API que dado uma imagem, retorna a porcentagem da imagem com construções
+- Criar uma API que dado uma imagem, retorna a porcentagem da mesma com construções.
 
 ## Setup on Windows with Anaconda Python 3.7
 ```bash
@@ -91,6 +91,18 @@ São aproximadamente 40 Gbs de dados compactados. São aproximadamente 24 horas 
 - recall = true positive /  (true positive + false negative)
 - F1 = precision * recall / ( precision + recall )
 - Ver Fonte: https://medium.com/@jonathan_hui/map-mean-average-precision-for-object-detection-45c121a31173
+
+## Backend em Python Flask
+***##TODO***
+
+## Deploy no backend no PythonAnywhere
+***##TODO***
+
+## Exemplo simples de Frontend em Express-Nunjucks
+***##TODO***
+
+## Deploy no frontend no Heroku
+***##TODO***
 
 ## Agradecimentos
 - Obrigado <a href="https://unsplash.com/@serjosoza?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">sergio souza</a> por compartilhar seu trabalho no <a href="https://unsplash.com/s/photos/amazon-rainforest?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
